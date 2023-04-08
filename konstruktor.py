@@ -50,4 +50,47 @@ def read(file_csv,jumlah_baris):
 
         return rows
     
+def user_part(user,jumlah_baris):
+    list_user=[]
+    list_pass=[]
+    list_role=[]
+    for i in range(jumlah_baris):
+        arr_user=[]
+        temp_user=[]
 
+        arr_pass=[]
+        temp_pass=[]
+
+        arr_role=[]
+        temp_role=[]
+
+        count=0
+        j=0
+        while count<1:
+            kata_user=list(user[i])
+            if kata_user[j] == ';':
+                count+=1
+                j+=1
+            else:
+                arr_user+=kata_user[j]
+                j+=1
+        while 0<count<2:
+            kata_pass=list(user[i])
+            if kata_pass[j] == ';':
+                count+=1
+                j+=1
+            else:
+                arr_pass+=kata_pass[j]
+                j+=1
+        while j<length(list(user[i])):
+            kata_role=list(user[i])
+            arr_role+=kata_role[j]
+            j+=1
+        temp_user=merge(arr_user)
+        temp_pass=merge(arr_pass)
+        temp_role=merge(arr_role)
+        list_user=append(list_user,temp_user)
+        list_pass=append(list_pass,temp_pass)
+        list_role=append(list_role,temp_role)
+
+    return (list_user,list_pass,list_role)
