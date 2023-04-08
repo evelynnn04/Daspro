@@ -1,9 +1,10 @@
 def length (list):
-    i=0
-    while init(list)!=[]:
-        i+=1
-        list=init(list)
-    return i+1
+    list_temp=append(list,"%")
+    j=0
+    while list_temp[j]!="%":
+        j+=1
+
+    return j
 
 def merge(list):
     array=''
@@ -18,7 +19,8 @@ def init(list):
         return []
  
 def append(list1,list2):
-    list=list1+list2
+    list=[*list1,*list2]
+
     return list
 
 def baris(file_csv):
