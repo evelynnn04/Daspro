@@ -57,6 +57,4 @@ def login(user,jumlah_baris):
         return("\nUsername tidak terdaftar!")
                     
 
-print(login(user,jumlah_baris1))
-
 
