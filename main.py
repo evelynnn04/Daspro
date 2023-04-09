@@ -17,9 +17,9 @@ while Keluar==False :
     elif command== "login":
         if role != 0 :
             print("Login gagal!")
-            print(f"Anda telah login dengan username {role}, silahkan lakukan “logout” sebelum melakukan login kembali.")
+            print(f"Anda telah login dengan username {username}, silahkan lakukan “logout” sebelum melakukan login kembali.")
         else :
-            role=login(user,jumlah_baris1)
+            (role,username)=login(user,jumlah_baris1)
     elif command=="exit":
         Keluar=exit(Keluar)
     elif command=="logout":
@@ -28,4 +28,3 @@ while Keluar==False :
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan logout")
         else :
             role=0
-            

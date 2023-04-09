@@ -3,7 +3,6 @@ def length (list):
     j=0
     while list_temp[j]!="%":
         j+=1
-
     return j
 
 def merge(list):
@@ -12,12 +11,6 @@ def merge(list):
         array+=list[i]    
     return [array]
 
-def init(list):
-    if list and list[:-1]:
-        return list[:-1]
-    else:
-        return []
- 
 def append(list1,list2):
     list=[*list1,*list2]
 
@@ -51,7 +44,12 @@ def read(file_csv,jumlah_baris):
             rows=append(rows,[array])
 
         return rows
-    
+
+def write(file_csv, data):
+    with open(file_csv, 'a') as csv:
+        csv_line = ';'.join(str(x) for x in data) + '\n'
+        csv.write(csv_line)
+
 def user_part(user,jumlah_baris):
     list_user=[]
     list_pass=[]
@@ -96,3 +94,27 @@ def user_part(user,jumlah_baris):
         list_role=append(list_role,temp_role)
 
     return (list_user,list_pass,list_role)
+
+def find(user_list,username):
+    index=0
+    while index<=length(user_list):
+        if index==length(user_list):
+            print("\nTidak ada jin dengan username tersebut.")
+            return 0
+        else:
+            if user_list[index]==username:
+                index+=1
+                break
+            else:
+                index+=1
+    return index-1
+
+def delete(file_csv, row):
+    with open(file_csv, 'r') as csv:
+        data = csv.readlines()
+
+    if row < length(data):
+        del data[row]
+
+        with open(file_csv, 'w') as csv:
+            csv.writelines(data)

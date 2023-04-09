@@ -18,13 +18,13 @@ def login(user,jumlah_baris):
     
     if user_valid==True and pass_valid==True:
         print (f'\nSelamat datang, {Username}!\nMasukkan command “help” untuk daftar command yang dapat kamu panggil.')
-        return list_role[i]
+        return (list_role[i],list_user[i])
     elif user_valid==True and pass_valid==False:
         print("\nPassword salah!")
-        return 0
+        return 0,0
     else:
         print("\nUsername tidak terdaftar!")
-        return 0
+        return 0,0
 
 def logout():
     return 0
