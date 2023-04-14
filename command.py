@@ -30,6 +30,42 @@ def logout():
     return 0
 
 def summonjin():
+    def inputjin():
+        jin_username=input("Masukkan username jin: ")
+        jin_already=False
+        for i in range(length(list_jin)):
+            if jin_username==list_jin[i]:
+                jin_already=True
+        while jin_already==True:
+            jin_username=input("Masukkan username jin: ")
+            jin_already=False
+            for i in range(length(list_jin)):
+                if jin_username==list_jin[i]:
+                    jin_already=True
+        jin_password=input("Masukkan password jin: ")
+        while length(jin_password)>25 or length(jin_password)<5:
+            print("Password panjangnya harus 5-25 karakter!")
+            jin_password=input("Masukkan password jin: ")
+        print("Mengumpulkan sesajen...")
+        print("Menyerahkan sesajen...")
+        print("Membacakan mantra...")
+        print(f"Jin {jin_username} berhasil dipanggil!")
+    if length(list_jin)<=100:
+        print("Jenis jin yang dapat dipanggil:")
+        print("(1) Pengumpul - Bertugas mengumpulkan bahan bangunan")
+        print("(2) Pembangun - Bertugas membangun candi")
+        jin_type = input("Masukkan nomor jenis jin yang ingin dipanggil:")
+        while jin_type!="1" and jin_type!="2"
+            print(f"Tidak ada jenis jin bernomor “{jin_type}”!")
+            jin_type = input("Masukkan nomor jenis jin yang ingin dipanggil:")
+        if jin_type=="1":
+            print("Memilih jin “Pengumpul”.")
+            inputjin()
+        else:   #jin_type=2
+            print("Memilih jin “Pembangun”.")
+            inputjin()
+    else:   #jumlah jin telah melebihi 100
+        print("Jumlah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu")
     return 0
 
 def hapusjin():
